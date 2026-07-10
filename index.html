@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Journal Forex</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+    <header>
+        <h1>📈 Trading Journal Forex</h1>
+        <button id="darkMode">🌙 Dark Mode</button>
+    </header>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h3>Total Trade</h3>
+            <h2 id="totalTrade">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Profit</h3>
+            <h2 id="profitTrade">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Loss</h3>
+            <h2 id="lossTrade">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Win Rate</h3>
+            <h2 id="winRate">0%</h2>
+        </div>
+
+        <div class="card">
+            <h3>Balance</h3>
+            <h2 id="balance">0</h2>
+        </div>
+
+    </div>
+
+    <!-- Form Input -->
+    <div class="form">
+
+        <input type="date" id="tanggal">
+
+        <select id="pair">
+            <option>XAUUSD</option>
+            <option>BTCUSD</option>
+            <option>EURUSD</option>
+            <option>GBPUSD</option>
+            <option>USDJPY</option>
+        </select>
+
+        <select id="type">
+            <option>BUY</option>
+            <option>SELL</option>
+        </select>
+
+        <input
+            type="number"
+            id="lot"
+            placeholder="Lot"
+            step="0.01">
+
+        <input
+            type="number"
+            id="profit"
+            placeholder="Profit / Loss (Rp)">
+
+        <button id="addTrade">
+            Tambah Trade
+        </button>
+
+    </div>
+
+    <!-- Grafik -->
+    <div class="chartBox">
+
+        <canvas id="balanceChart"></canvas>
+
+    </div>
+
+    <!-- Kalender Trading -->
+<div class="calendarBox">
+    <h2>📅 Kalender Trading</h2>
+    <div class="calendarHeader">
+        <button id="prevMonth">◀</button>
+        <h3 id="monthYear"></h3>
+        <button id="nextMonth">▶</button>
+    </div>
+
+    <div class="calendarWeek">
+        <div>Sen</div>
+        <div>Sel</div>
+        <div>Rab</div>
+        <div>Kam</div>
+        <div>Jum</div>
+        <div>Sab</div>
+        <div>Min</div>
+    </div>
+    <div id="calendar"></div>
+</div>
+
+<!-- Riwayat -->
+
+<div class="tableWrapper">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>No</th>
+                <th>Tanggal</th>
+                <th>Pair</th>
+                <th>Type</th>
+                <th>Lot</th>
+                <th>Profit/Loss</th>
+                <th>Status</th>
+                <th>Aksi</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tradeTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<!-- JavaScript -->
+
+<script src="chart.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
